@@ -1,0 +1,5 @@
+This is a container for running the MiniUPNP daemon.
+
+I am using this for a home router and it requires
+the net_admin capability to be able to set IPTable
+rules. The init system inside the container is systemd.

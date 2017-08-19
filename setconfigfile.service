@@ -1,0 +1,14 @@
+[Unit]
+Description=Set Interfaces before miniupnpd start
+Before=miniupnpd.service
+
+[Service]
+Type=oneshot
+PassEnvironment=WAN_INT
+PassEnvironment=LAN_INT
+ExecStart=/bin/bash /etc/miniupnpd/setconfigfile.sh
+RemainAfterExit=false
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target

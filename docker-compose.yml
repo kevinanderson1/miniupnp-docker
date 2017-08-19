@@ -1,0 +1,15 @@
+version: "2"
+services:
+  miniupnpd:
+    container_name: "miniupnpd"
+    restart: always
+    image: andersonkw2/miniupnpd
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    environment:
+      - WAN_INT=enp3s0
+      - LAN_INT=enp4s0
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+

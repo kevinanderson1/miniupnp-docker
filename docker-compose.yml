@@ -3,7 +3,7 @@ services:
   miniupnpd:
     container_name: "miniupnpd"
     restart: always
-    image: andersonkw2/miniupnpd
+    image: andersonkw2/miniupnp-docker
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
     environment:

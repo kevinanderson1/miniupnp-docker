@@ -14,6 +14,7 @@ ADD setconfigfile.service /etc/systemd/system/
 ADD setconfigfile.sh /etc/miniupnpd/
 
 RUN chmod 755 /etc/miniupnpd/setconfigfile.sh \
+  && chmod 644 /etc/systemd/system/setconfigfile.service \
   && systemctl disable systemd-resolved \
   && systemctl disable systemd-networkd \
   && systemctl mask systemd-logind \
